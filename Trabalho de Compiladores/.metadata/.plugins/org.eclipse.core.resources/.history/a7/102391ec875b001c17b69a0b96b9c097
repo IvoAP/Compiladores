@@ -86,7 +86,7 @@ public class ScannerFile {
 					estado = 3;
 					term+= currentChar;
 				}
-				else if(!isDigit(currentChar)) {
+				else if(!isChar(currentChar)) {
 					estado = 4;
 				}else {
 					throw new LexicalException("Unrecognized Number");
@@ -117,7 +117,7 @@ public class ScannerFile {
 	}
 	
 	public Boolean isOperator(char c) {
-		return c == '>' || c == '<' || c == '=' || c == '!' || c == '+' || c == '-' || c == '/' || c == '*';
+		return c == '>' || c == '<' || c == '=' || c == '!';
 	}
 	
 	public Boolean isSpace(char c) {
