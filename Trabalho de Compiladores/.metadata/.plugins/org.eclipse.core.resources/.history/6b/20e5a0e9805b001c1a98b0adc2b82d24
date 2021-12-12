@@ -1,0 +1,17 @@
+Dada a gramática G
+
+G (Vn, Vt, p, s)
+
+Vn (Símbolos não terminais) : E, T , OP
+Vt (Símbolos terminais) : id, num, +, -, *, /
+
+1 : E -> E OP T | T
+2 : T -> id | num
+3 : OP -> + | - | * | /
+
+precisamos reescrever a regra 1, transformando-a em:
+1a -> T E'
+1b -> E' -> OP T E' | &
+2  -> id | num
+3  -> OP -> + | - | * | /
+

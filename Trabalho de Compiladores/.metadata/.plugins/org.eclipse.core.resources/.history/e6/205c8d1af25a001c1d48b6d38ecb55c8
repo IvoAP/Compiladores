@@ -1,0 +1,21 @@
+package MainAplication;
+
+import Lexico.ScannerFile;
+import Lexico.Token;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		ScannerFile sc = new ScannerFile("input.txt");
+		Token t = null;
+		
+		do {
+		    t = sc.nextToken();
+			if(t != null) {
+				System.out.println(t);
+			}
+		}while(t != null);
+
+	}
+
+}

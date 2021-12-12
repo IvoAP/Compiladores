@@ -1,0 +1,40 @@
+package Lexico;
+
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class ScannerFile {
+	private char[] content;
+	private int state;
+	
+	
+	public ScannerFile(String filename) {
+		try {
+			String txtcontent;
+			txtcontent = new String(Files.readAllBytes(Paths.get(filename)), StandardCharsets.UTF_8);
+			System.out.println("DEBUG  ----------------");
+			System.out.println(txtcontent);
+			System.out.println("------------------------");
+			this.content = txtcontent.toCharArray();
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	public Boolean isDigit(char c) {
+		return (c >= '0' && c<= '9');
+	}
+	
+	public Boolean isChar(char c) {
+		return (c >= 'A' && c<= 'Z') || (c>= 'a' && c <= 'z');
+	}
+	
+	public Boolean isOperator(char c) {
+		return c == '>' || c == '<' || c == '=' || c == '!';
+	}
+	
+	public Boolean isSpace(char c) {
+		return c == ' ' || c == '\n' || c == '\t' || c == '\r';
+	}
+}

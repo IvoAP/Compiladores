@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Analisador Léxico&apos; to &apos;Compiladores&apos;" description="Rename resource &apos;Analisador Léxico&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Analisador Léxico" name="Compiladores" stamp="1639332102435" updateReferences="true"/>
+</session>

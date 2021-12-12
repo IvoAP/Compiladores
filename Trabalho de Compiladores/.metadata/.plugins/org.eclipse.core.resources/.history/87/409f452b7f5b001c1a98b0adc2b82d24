@@ -1,0 +1,32 @@
+package MainAplication;
+
+
+import Exceptions.LexicalException;
+import Exceptions.SyntaxException;
+import Lexico.ScannerFile;
+import ParseCompiler.Parse;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		try {
+			ScannerFile sc = new ScannerFile("input.txt");
+			Parse p = new Parse(sc);
+			p.E();
+		
+			
+					
+		} catch (LexicalException ex) {
+			System.out.println("Lexical ERROR " + ex.getMessage());
+		}
+		
+		catch(SyntaxException ex) {
+			System.out.println("Syntatica ERROR " + ex.getMessage());
+		}
+		
+		catch(Exception ex) {
+			System.out.println("Generic Error");
+		}
+	}
+
+}

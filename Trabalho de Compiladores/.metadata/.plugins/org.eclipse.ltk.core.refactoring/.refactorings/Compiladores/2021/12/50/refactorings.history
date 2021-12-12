@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Lexico.Scanner&apos; to &apos;ScannerFile&apos;&#x0D;&#x0A;- Original project: &apos;Analisador Léxico&apos;&#x0D;&#x0A;- Original element: &apos;Lexico.Scanner&apos;&#x0D;&#x0A;- Renamed element: &apos;Lexico.ScannerFile&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Scanner&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Lexico{Scanner.java[Scanner" matchStrategy="1" name="ScannerFile" qualified="false" references="true" similarDeclarations="false" stamp="1639107356777" textual="false" version="1.0"/>
+</session>

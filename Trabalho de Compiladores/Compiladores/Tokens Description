@@ -1,0 +1,20 @@
+Identificadores
+	(a...z) (A...Z | 0...9| a...z)
+	
+Números
+	(0..9)+
+	
+Pontuação
+	;
+
+OperadoreS Relacionais
+	> | >= | < | <= | == | !=
+	
+Operadores Aritméticos
+	 = 
+	 
+Observações
+
+x...y -> Intervalo de x até y
++ 	  -> 1 ou mais repetições
+*     -> 0 ou mais repetições

@@ -1,0 +1,26 @@
+package MainAplication;
+
+import Exceptions.MyException;
+import Lexico.ScannerFile;
+import ParseCompiler.Parse;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		try {
+			ScannerFile sc = new ScannerFile("input.txt");
+			Parse p = new Parse(sc);
+			
+			p.E();
+			
+					
+		} catch (MyException ex) {
+			System.out.println("ERROR " + ex.getMessage());
+		}
+		
+		catch(Exception ex) {
+			System.out.println("Generic Error");
+		}
+	}
+
+}
