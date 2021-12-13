@@ -1,0 +1,39 @@
+G = (Vn, Vt, P, COMANDO)
+
+Vn = {S, COMANDO, CHAVE, ATRIB, DECL, COMP, REL, EX, EX', TIPO, OP}
+Vt = {
+	';', var, id, num,
+	if, then, endif, while, repeat, endwhile,
+	'=', '==', '!=', '>', '>=', '<', '<=',
+	'+', '-', '*', '/'
+}
+P = {
+	0. S -> S $
+	1. COMANDO -> 
+		| ATRIB ; COMANDO
+		| CHAVE ; COMANDO
+		| ε
+	2. CHAVE -> 
+		if COMP then COMANDO endif
+		| while COMP repeat COMANDO endwhile
+		| DECL
+	3. DECL -> var id ATRIB
+	4. ATRIB -> = EX | ε
+	5. EX -> T EX'
+	6. EX' -> OP T EX' | ε
+	7. TIPO -> id | num
+	8. COMP -> T REL T
+	9. REL -> '==' | '!=' | '>' | '>=' | '<' | '<='
+	10. OP -> '+' | '-' | '*' | '/'
+}
+
+primeiros(COMANDO) =	{ id, num, if, while, var, ε }			|	seguidores(COMANDO) =	{ endif, endwhile}
+primeiros(CHAVE) =		{if, while, var}						|	seguidores(CHAVE) =		{ ';' }
+primeiros(DECL) =		{ var }									|	seguidores(DECL) =		{ ';' }
+primeiros(ATRIB) =		{ '=' }									|	seguidores(ATRIB) =		{ ';' }
+primeiros(COMP) =		{ id, num }								|	seguidores(COMP) =		{ then }
+primeiros(EX) =			{ id, num }								|	seguidores(EX) =		{ ';' }
+primeiros(EX') =		{ '+', '-', '*', '/' }					|	seguidores(EX') =		{ ';' } 
+primeiros(TIPO) =		{ id, num }								|	seguidores(TIPO) =		{ then, ';', '=', '==', '!=', '>', '>=', '<', '<=', '+', '-', '*', '/' }
+primeiros(OP) =			{ '+', '-', '*', '/' }					|	seguidores(OP) =		{ id, num }
+primeiros(REL) =		{ '==', '!=', '>', '>=', '<', '<=' }	|	seguidores(REL) =		{ id, num }
