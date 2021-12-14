@@ -1,0 +1,6 @@
+Compilador tem duas fases principais (front-end | back-end)
+Analisador Sintatico é front-end e é o segundo de três etapas
+Gramáticas -> Não Terminais, Terminais, Produção, Simbolo Inicial
+Árvores de Derivação
+Abordagem Top-Down
+Apresentar Códigos

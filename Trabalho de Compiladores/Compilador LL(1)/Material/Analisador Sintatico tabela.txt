@@ -1,0 +1,30 @@
+//site 
+https://www.cs.princeton.edu/courses/archive/spring20/cos320/LL1/
+CM ::= T AT ; CM
+CM ::= CH ; CM
+CM ::= ''
+
+CH ::= i CP t CM ef
+CH ::= w CP t CM ew
+CH ::= DC 
+
+DC ::= var id AT
+AT ::=  = EX
+AT ::= ''
+CP ::= T REL T
+EX ::= T EXL
+EXL ::= OP T EXL
+EXL ::= ''
+T ::= id 
+T ::= num
+OP ::= +
+OP ::= -
+OP ::= *
+OP ::= /
+
+REL ::= ==
+REL ::= != 
+REL ::= >
+REL ::= >=
+REL ::= <
+REL ::= <=

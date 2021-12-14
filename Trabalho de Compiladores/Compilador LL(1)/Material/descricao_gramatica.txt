@@ -19,10 +19,10 @@ P = {
 		| DECL
 	3. DECL -> var id ATRIB
 	4. ATRIB -> = EX | ε
-	5. EX -> T EX'
-	6. EX' -> OP T EX' | ε
+	5. EX -> TIPO EX'
+	6. EX' -> OP TIPO EX' | ε
 	7. TIPO -> id | num
-	8. COMP -> T REL T
+	8. COMP -> TIPO REL TIPO
 	9. REL -> '==' | '!=' | '>' | '>=' | '<' | '<='
 	10. OP -> '+' | '-' | '*' | '/'
 }
