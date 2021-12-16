@@ -1,9 +1,1 @@
-var abc = 2;
-var def;
-def = 0;
-while def < 10 repeat
-	if abc >= def then
-		abc = abc + 5;
-	endif;
-	def = def + 1;
-endwhile;
+abc + 2 - 1.5 * cl / 12 / abc

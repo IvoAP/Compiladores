@@ -8,32 +8,26 @@ Vt = {
 	'+', '-', '*', '/'
 }
 P = {
-	0. S -> S $
-	1. COMANDO -> 
-		| ATRIB ; COMANDO
-		| CHAVE ; COMANDO
-		| ε
-	2. CHAVE -> 
-		if COMP then COMANDO endif
-		| while COMP repeat COMANDO endwhile
-		| DECL
-	3. DECL -> var id ATRIB
-	4. ATRIB -> = EX | ε
-	5. EX -> TIPO EX'
-	6. EX' -> OP TIPO EX' | ε
-	7. TIPO -> id | num
-	8. COMP -> TIPO REL TIPO
-	9. REL -> '==' | '!=' | '>' | '>=' | '<' | '<='
-	10. OP -> '+' | '-' | '*' | '/'
+	0. S -> E $
+	1. E -> TIPO E'
+	2. E' -> OP TIPO E' | ε
+	3. TIPO -> id | num
+	4. OP -> '+' | '-' | '*' | '/'
 }
 
-primeiros(COMANDO) =	{ id, num, if, while, var, ε }			|	seguidores(COMANDO) =	{ endif, endwhile}
-primeiros(CHAVE) =		{if, while, var}						|	seguidores(CHAVE) =		{ ';' }
-primeiros(DECL) =		{ var }									|	seguidores(DECL) =		{ ';' }
-primeiros(ATRIB) =		{ '=' }									|	seguidores(ATRIB) =		{ ';' }
-primeiros(COMP) =		{ id, num }								|	seguidores(COMP) =		{ then }
-primeiros(EX) =			{ id, num }								|	seguidores(EX) =		{ ';' }
-primeiros(EX') =		{ '+', '-', '*', '/' }					|	seguidores(EX') =		{ ';' } 
-primeiros(TIPO) =		{ id, num }								|	seguidores(TIPO) =		{ then, ';', '=', '==', '!=', '>', '>=', '<', '<=', '+', '-', '*', '/' }
-primeiros(OP) =			{ '+', '-', '*', '/' }					|	seguidores(OP) =		{ id, num }
-primeiros(REL) =		{ '==', '!=', '>', '>=', '<', '<=' }	|	seguidores(REL) =		{ id, num }
+primeiros(S) =		{ id, num }				|	seguidores(S) = 	{}
+primeiros(E) =		{ id, num }				|	seguidores(EX) =	{ $ }
+primeiros(E') =		{ '+', '-', '*', '/' }	|	seguidores(E') =	{ $ } 
+primeiros(T) =		{ id, num }				|	seguidores(T) =		{ '+', '-', '*', '/', $ }
+primeiros(OP) =		{ '+', '-', '*', '/' }	|	seguidores(OP) =	{ id, num }
+
+https://www.cs.princeton.edu/courses/archive/spring20/cos320/LL1/
+E ::= T E'
+E' ::= OP T E'
+E' ::= ''
+T ::= id
+T ::= num
+OP ::= +
+OP ::= -
+OP ::= *
+OP ::= /

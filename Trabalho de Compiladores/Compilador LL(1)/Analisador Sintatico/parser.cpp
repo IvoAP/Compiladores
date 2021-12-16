@@ -25,7 +25,6 @@ int main() {
 			break;
 		default:
 			throw std::invalid_argument( "Falha na sintaxe." );
-			return 1;
 		}	
 	}
 		

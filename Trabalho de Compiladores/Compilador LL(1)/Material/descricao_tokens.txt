@@ -1,14 +1,8 @@
-PONTUACAO
-	;
 IDENTIFICADOR
 	(a..z | A..Z) (a..z | A..Z | 0..9)*
+	
 NUMERO
 	(0..9)+ ((.)(0..9)*)
-	
-#Operadores
-OPERADOR_ATRIBUICAO
-	=
-OPERADOR_RELACIONAL
-	> | >= | < | <= | == | !=
+
 OPERADOR_ARITMETICO
 	+ | - | * | /
